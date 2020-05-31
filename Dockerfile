@@ -1,2 +1,6 @@
-FROM httpd
-COPY index.html /usr/local/apache2/htdocs
+FROM centos
+
+RUN yum install httpd -y
+COPY ayush.html /var/www/html/
+CMD /usr/sbin/httpd -DFOREGROUND
+EXPOSE 80
